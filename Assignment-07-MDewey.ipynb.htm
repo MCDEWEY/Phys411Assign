@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <meta name="description" content="">
+    
+
+    
+    <meta name="author" content="">
+    
+
+    <!--NEW RELIC Start Perf Measurement-->
+    
+    <!--NREND-->
+
+    <!-- Le styles -->
+    <!--<link href="/static/css/bootstrap.css" rel="stylesheet">-->
+    <link href="Assignment-07-MDewey.ipynb_files/docs.css" rel="stylesheet">
+    <link href="Assignment-07-MDewey.ipynb_files/bootstrap.css" rel="stylesheet">
+    <link href="Assignment-07-MDewey.ipynb_files/bootstrap-responsive.css" rel="stylesheet">
+    <link href="Assignment-07-MDewey.ipynb_files/animate.css" rel="stylesheet">
+    <link href="Assignment-07-MDewey.ipynb_files/font-awesome.css" rel="stylesheet">
+    <link href="Assignment-07-MDewey.ipynb_files/nbviewer.css" rel="stylesheet">
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://nbviewer.ipython.org/static/ico/ipynb_icon_16x16.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-57-precomposed.png">
+    
+    
+    
+
+    
+
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    <meta name="twitter:title" content="Notebook on nbviewer">
+    
+
+    
+    <meta name="twitter:description" content="Check out this IPython notebook!">
+    
+
+    
+    <meta name="twitter:domain" content="nbviewer.ipython.org">
+    
+
+    <meta name="twitter:image:src" content="http://ipython.org/ipython-doc/dev/_images/ipynb_icon_128x128.png">
+    
+    
+    
+
+    <link href="Assignment-07-MDewey.ipynb_files/ipython.css" rel="stylesheet">
+    <link href="Assignment-07-MDewey.ipynb_files/pygments.css" rel="stylesheet">
+    <style type="text/css" media="screen and (min-width:980px)">
+   
+    body {
+        padding-top: 40px;
+    }
+
+    </style>
+    <style type="text/css">
+    .imgwrap {
+        text-align: center;
+    }
+
+    @media (max-width: 767px){
+
+        div.input, div.output_area {
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            box-orient: vertical;
+        }
+
+        div.prompt {
+            text-align:left;
+        }
+
+    }
+
+    
+    </style>
+    
+    <script src="Assignment-07-MDewey.ipynb_files/analytics.js" async=""></script><script src="Assignment-07-MDewey.ipynb_files/MathJax.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    init_mathjax = function() {
+        if (window.MathJax) {
+            // MathJax loaded
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 0}},
+                    linebreaks: { automatic: true }
+                }
+            });
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+    
+  <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 4; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?rev=2.4-beta-2') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Main; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?rev=2.4-beta-2') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?rev=2.4-beta-2') format('opentype'); font-weight: bold}
+@font-face {font-family: MathJax_Main; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?rev=2.4-beta-2') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?rev=2.4-beta-2') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Math; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?rev=2.4-beta-2') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?rev=2.4-beta-2') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?rev=2.4-beta-2') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?rev=2.4-beta-2') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?rev=2.4-beta-2') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?rev=2.4-beta-2') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?rev=2.4-beta-2') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?rev=2.4-beta-2') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?rev=2.4-beta-2') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px none; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div style="display: none;" id="MathJax_Message"></div>
+
+  <!-- These are loaded at the top of the body so they are available to notebook
+  cells when they are loaded below. -->
+  <script src="Assignment-07-MDewey.ipynb_files/jquery.js"></script>
+  <script src="Assignment-07-MDewey.ipynb_files/require.js"></script>
+  <script src="Assignment-07-MDewey.ipynb_files/moment.js"></script>
+
+  <!-- Navbar
+  ================================================== -->
+    <div id="menubar" class="navbar navbar-fixed-top hidden-print animated">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+
+                <li>
+        <a href="http://nbviewer.ipython.org/" title="nbviewer">
+            <strong>
+            <span>nbviewer</span>
+            </strong>
+        </a>
+    </li>
+                <li>
+        <a href="http://nbviewer.ipython.org/faq" title="FAQ">
+            
+            <span>FAQ</span>
+            
+        </a>
+    </li>
+
+              <li class="">
+                <a href="http://www.ipython.org/">IPython</a>
+              </li>
+            </ul>
+            <ul class="nav pull-right"> 
+              
+              
+      
+        <li>
+        <a href="https://github.com/jklymak/Phy411/blob/master/assigments/Assignment-07.ipynb" title="Notebook Home">
+            <span class="fa fa-github fa-2x menu-icon"></span>
+            <span class="menu-text">Notebook Home</span>
+        </a>
+    </li>
+      
+        <li>
+        <a href="https://raw.githubusercontent.com/jklymak/Phy411/master/assigments/Assignment-07.ipynb" title="Download Notebook" download="">
+            <span class="fa fa-download fa-2x menu-icon"></span>
+            <span class="menu-text">Download Notebook</span>
+        </a>
+    </li>
+    
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+     
+    
+<ul class="breadcrumb">
+    
+    <li><a href="http://nbviewer.ipython.org/github/jklymak/Phy411/tree/master">Phy411</a> <span class="divider">/</span></li>
+    
+    <li><a href="http://nbviewer.ipython.org/github/jklymak/Phy411/tree/master/assigments">assigments</a> <span class="divider">/</span></li>
+    
+</ul>
+
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[77]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="k">def</span> <span class="nf">css_styling</span><span class="p">():</span>
+    <span class="n">styles</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">"../styles/custom.css"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">styles</span><span class="p">)</span>
+<span class="n">css_styling</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[77]:</div>
+
+<div class="output_html rendered_html output_subarea output_pyout">
+<link href="Assignment-07-MDewey.ipynb_files/css_003.css" rel="stylesheet" type="text/css">
+<link href="Assignment-07-MDewey.ipynb_files/css.css" rel="stylesheet" type="text/css">
+<link href="Assignment-07-MDewey.ipynb_files/css_002.css" rel="stylesheet" type="text/css">
+<style>
+    @font-face {
+        font-family: "Computer Modern";
+        src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+    }
+    div.cell{
+        width:800px;
+        margin-left:5% !important;
+        margin-right:auto;
+    }
+    h1 {
+        font-family: 'Alegreya Sans', sans-serif;
+    }
+    h2 {
+        font-family: 'Alegreya Sans', sans-serif;
+        color:#CD2305;
+    }
+    h3{
+		font-family: 'Fenix', serif;
+        margin-top:12px;
+        margin-bottom: 3px;
+        color:#CD2305;
+       }
+	h4{
+		font-family: 'Fenix', serif;
+        color:#CD2305;
+       }
+    h5 {
+        font-family: 'Alegreya Sans', sans-serif;
+        color:#CD2305;
+    }	   
+    div.text_cell_render{
+        font-family: 'Alegreya Sans',Computer Modern, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif; 
+        /*font-family: 'Alegreya Sans', sans-serif;*/
+        font-size: 120%;
+        line-height: 120%;
+        width:55em;
+        margin-left:-10% !important;
+
+    }
+    .CodeMirror{
+            font-family: 'Bitstream Vera Sans Mono','Lucida Console',monospace;
+			font-size: 90%;
+    }
+/*    .prompt{
+        display: None;
+    }*/
+    .text_cell_render h1 {
+        font-weight: 200;
+        font-size: 24pt;
+		line-height: 100%;
+        color:#CD2305;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+        display: block;
+    }	
+    .text_cell_render h5 {
+        font-weight: 300;
+        font-size: 16pt;
+        color: #CD2305;
+        font-style: italic;
+        margin-bottom: .5em;
+        margin-top: 0.5em;
+        display: block;
+    }
+    
+    .warning{
+        color: rgb( 240, 20, 20 )
+        }  
+</style>
+<script>
+    MathJax.Hub.Config({
+                        TeX: {
+                           extensions: ["AMSmath.js"]
+                           },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                },
+                displayAlign: 'center', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 4}}
+                }
+        });
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p><figure><p></p>
+<p><img src="Assignment-07-MDewey.ipynb_files/PhysicsLogo.htm" width="100" align="right">
+</p></figure><p></p>
+<h1 id="-physics-411-http-jklymak-github-io-phy411-time-series-analysis"><a href="http://jklymak.github.io/Phy411/">Physics 411</a> Time Series Analysis</h1>
+<p><em>Jody Klymak</em></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Assignment-7">Assignment 7<a class="anchor-link" href="#Assignment-7">¶</a></h1>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Q1-Frequency-domain-filtering"><strong>Q1</strong> Frequency-domain filtering<a class="anchor-link" href="#Q1-Frequency-domain-filtering">¶</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="background:#F0F0F0">  Consider a time series with a sharp jump in the middle as in the notes:
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy.random</span> <span class="kn">as</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.mlab</span> <span class="kn">as</span> <span class="nn">mlab</span>
+
+<span class="n">N</span><span class="o">=</span><span class="mi">1001</span>
+<span class="n">dt</span><span class="o">=</span><span class="mf">1.</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="c"># red noise</span>
+<span class="n">f0</span><span class="o">=</span><span class="mf">0.03</span> <span class="c"># Hz</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span> <span class="mf">40.</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">f0</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="c"># + sine wave</span>
+<span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="mf">60.</span><span class="o">*</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">noise</span>
+<span class="n">xn</span><span class="p">[</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">:]</span><span class="o">=</span><span class="n">xn</span><span class="p">[</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">:]</span><span class="o">-</span><span class="mf">2000.</span>
+<span class="c"># remove the mean!!</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="n">xn</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="background:#F0F0F0"><strong>1</strong> Implement a low-pass filter of the data in the frequency domain, with a cutoff frequency of <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-1-Frame" class="MathJax"><nobr><span style="width: 6.086em; display: inline-block;" id="MathJax-Span-1" class="math"><span style="display: inline-block; position: relative; width: 5.622em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.941em, 1000em, 3.224em, -0.441em); top: -2.811em; left: 0em;"><span id="MathJax-Span-2" class="mrow"><span id="MathJax-Span-3" class="msubsup"><span style="display: inline-block; position: relative; width: 0.897em; height: 0px;"><span style="position: absolute; clip: rect(1.72em, 1000em, 2.961em, -0.441em); top: -2.59em; left: 0em;"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-4" class="mi">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span style="display: inline-block; width: 0px; height: 2.59em;"></span></span><span style="position: absolute; top: -2.074em; left: 0.491em;"><span style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-5" class="mi">c</span><span style="display: inline-block; width: 0px; height: 2.315em;"></span></span></span></span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-6" class="mo">=</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-7" class="mn">0.06</span><span style="font-family: MathJax_Main;" id="MathJax-Span-8" class="mtext">&nbsp;</span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-9" class="mi">H<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.057em;"></span></span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-10" class="mi">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.811em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.148em; vertical-align: -0.328em;"></span></span></nobr></span><script id="MathJax-Element-1" type="math/tex">f_c=0.06\ Hz</script>.</div>
+
+<ol>
+<li>plot the signal and the smoothed signal (suggest zooming in on the step).</li>
+<li>plot the spectral response <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-2-Frame" class="MathJax"><nobr><span style="width: 2.991em; display: inline-block;" id="MathJax-Span-11" class="math"><span style="display: inline-block; position: relative; width: 2.756em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.896em, 1000em, 3.226em, -0.377em); top: -2.811em; left: 0em;"><span id="MathJax-Span-12" class="mrow"><span id="MathJax-Span-13" class="texatom"><span id="MathJax-Span-14" class="mrow"><span style="font-family: MathJax_Main;" id="MathJax-Span-15" class="mo">|</span></span></span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-16" class="mi">H<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.057em;"></span></span><span style="font-family: MathJax_Main;" id="MathJax-Span-17" class="mo">(</span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-18" class="mi">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span style="font-family: MathJax_Main;" id="MathJax-Span-19" class="mo">)</span><span id="MathJax-Span-20" class="texatom"><span id="MathJax-Span-21" class="mrow"><span style="font-family: MathJax_Main;" id="MathJax-Span-22" class="mo">|</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.811em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.199em; vertical-align: -0.33em;"></span></span></nobr></span><script id="MathJax-Element-2" type="math/tex">|H(f)|</script></li>
+<li>plot the phase response <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-3-Frame" class="MathJax"><nobr><span style="width: 5.729em; display: inline-block;" id="MathJax-Span-23" class="math"><span style="display: inline-block; position: relative; width: 5.291em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.896em, 1000em, 3.226em, -0.462em); top: -2.811em; left: 0em;"><span id="MathJax-Span-24" class="mrow"><span id="MathJax-Span-25" class="texatom"><span id="MathJax-Span-26" class="mrow"><span style="font-family: MathJax_Main;" id="MathJax-Span-27" class="mi">a</span><span style="font-family: MathJax_Main;" id="MathJax-Span-28" class="mi">n</span><span style="font-family: MathJax_Main;" id="MathJax-Span-29" class="mi">g</span><span style="font-family: MathJax_Main;" id="MathJax-Span-30" class="mi">l</span><span style="font-family: MathJax_Main;" id="MathJax-Span-31" class="mi">e</span></span></span><span style="font-family: MathJax_Main;" id="MathJax-Span-32" class="mo">(</span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-33" class="mi">H<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.057em;"></span></span><span style="font-family: MathJax_Main;" id="MathJax-Span-34" class="mo">(</span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-35" class="mi">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span style="font-family: MathJax_Main;" id="MathJax-Span-36" class="mo">)</span><span style="font-family: MathJax_Main;" id="MathJax-Span-37" class="mo">)</span></span><span style="display: inline-block; width: 0px; height: 2.811em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.199em; vertical-align: -0.33em;"></span></span></nobr></span><script id="MathJax-Element-3" type="math/tex">\mathrm{angle}(H(f))</script>.</li>
+</ol>
+<div style="background:#F0F0F0">
+Be sure to comment on how good your filter is.
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[0]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>COMMENT HERE:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="background:#F0F0F0"><strong>2</strong> Now repeat the above but apply a Hanning window to the frequency window <em>before</em> you apply it to the FFT of <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-4-Frame" class="MathJax"><nobr><span style="width: 1.146em; display: inline-block;" id="MathJax-Span-38" class="math"><span style="display: inline-block; position: relative; width: 1.047em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.652em, 1000em, 2.583em, -0.461em); top: -2.26em; left: 0em;"><span id="MathJax-Span-39" class="mrow"><span id="MathJax-Span-40" class="msubsup"><span style="display: inline-block; position: relative; width: 1.067em; height: 0px;"><span style="position: absolute; clip: rect(1.983em, 1000em, 2.767em, -0.461em); top: -2.59em; left: 0em;"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-41" class="mi">x</span><span style="display: inline-block; width: 0px; height: 2.59em;"></span></span><span style="position: absolute; top: -2.165em; left: 0.551em;"><span style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-42" class="mi">n</span><span style="display: inline-block; width: 0px; height: 2.315em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.26em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.767em; vertical-align: -0.23em;"></span></span></nobr></span><script id="MathJax-Element-4" type="math/tex">x_n</script>.  Comment on how well the filter is doing when you do this.  (Its helpful to keep the previous result up)
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[0]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>COMMENT</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="background:#F0F0F0"><strong>3</strong> So the Hanning window falls off a <em>lot</em>
+ earlier and more slowly than a step function, so adjust the cutoff 
+frequency to get a reasonable filter that preserves the amplitude of the
+ sine wave at <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-5-Frame" class="MathJax"><nobr><span style="width: 5.551em; display: inline-block;" id="MathJax-Span-43" class="math"><span style="display: inline-block; position: relative; width: 5.126em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.941em, 1000em, 3.181em, -0.441em); top: -2.811em; left: 0em;"><span id="MathJax-Span-44" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-45" class="mi">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-46" class="mo">=</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-47" class="mn">0.03</span><span style="font-family: MathJax_Main;" id="MathJax-Span-48" class="mtext">&nbsp;</span><span id="MathJax-Span-49" class="texatom"><span id="MathJax-Span-50" class="mrow"><span style="font-family: MathJax_Main;" id="MathJax-Span-51" class="mi">H</span><span style="font-family: MathJax_Main;" id="MathJax-Span-52" class="mi">z</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.811em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.102em; vertical-align: -0.281em;"></span></span></nobr></span><script id="MathJax-Element-5" type="math/tex">f=0.03\ \mathrm{Hz}</script>.  Comment on the pros and cons of this approach.<br></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[0]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>COMMENT HERE</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Q2:-Implementing-a-bandpass-filter">Q2: Implementing a bandpass filter<a class="anchor-link" href="#Q2:-Implementing-a-bandpass-filter">¶</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="background:#F0F0F0"><strong>1</strong> Create a red-noise process with 20000 data points, <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-6-Frame" class="MathJax"><nobr><span style="width: 3.705em; display: inline-block;" id="MathJax-Span-53" class="math"><span style="display: inline-block; position: relative; width: 3.417em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.952em, 1000em, 2.987em, -0.463em); top: -2.811em; left: 0em;"><span id="MathJax-Span-54" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-55" class="mi">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-56" class="mi">t</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-57" class="mo">=</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-58" class="mn">1</span><span style="font-family: MathJax_Main;" id="MathJax-Span-59" class="mtext">&nbsp;</span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-60" class="mi">s</span></span><span style="display: inline-block; width: 0px; height: 2.811em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.88em; vertical-align: -0.071em;"></span></span></nobr></span><script id="MathJax-Element-6" type="math/tex">dt=1\ s</script>.  Using a <strong>truncated Dirichlet Kernel</strong>, create a <strong>bandpass</strong> filter centered at <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-7-Frame" class="MathJax"><nobr><span style="width: 5.551em; display: inline-block;" id="MathJax-Span-61" class="math"><span style="display: inline-block; position: relative; width: 5.126em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.941em, 1000em, 3.224em, -0.441em); top: -2.811em; left: 0em;"><span id="MathJax-Span-62" class="mrow"><span id="MathJax-Span-63" class="msubsup"><span style="display: inline-block; position: relative; width: 0.897em; height: 0px;"><span style="position: absolute; clip: rect(1.72em, 1000em, 2.961em, -0.441em); top: -2.59em; left: 0em;"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-64" class="mi">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span style="display: inline-block; width: 0px; height: 2.59em;"></span></span><span style="position: absolute; top: -2.074em; left: 0.491em;"><span style="font-size: 70.7%; font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-65" class="mi">c</span><span style="display: inline-block; width: 0px; height: 2.315em;"></span></span></span></span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-66" class="mo">=</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-67" class="mn">0.1</span><span style="font-family: MathJax_Main;" id="MathJax-Span-68" class="mtext">&nbsp;</span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-69" class="mi">H<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.057em;"></span></span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-70" class="mi">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.811em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.148em; vertical-align: -0.328em;"></span></span></nobr></span><script id="MathJax-Element-7" type="math/tex">f_c=0.1\ Hz</script> that has a passband that is approximately 0.1 Hz wide. Choose a filter length that is long enough to accomodate 0.1 Hz. 
+</div>
+
+<ol>
+<li>Plot the unshifted and shifted filters versus <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-8-Frame" class="MathJax"><nobr><span style="width: 0.551em; display: inline-block;" id="MathJax-Span-71" class="math"><span style="display: inline-block; position: relative; width: 0.496em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.731em, 1000em, 2.767em, -0.448em); top: -2.59em; left: 0em;"><span id="MathJax-Span-72" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-73" class="mi">k</span></span><span style="display: inline-block; width: 0px; height: 2.59em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.88em; vertical-align: -0.071em;"></span></span></nobr></span><script id="MathJax-Element-8" type="math/tex">k</script>, the time index.</li>
+<li>Plot the spectra, the response function <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-9-Frame" class="MathJax"><nobr><span style="width: 2.932em; display: inline-block;" id="MathJax-Span-74" class="math"><span style="display: inline-block; position: relative; width: 2.701em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.765em, 1000em, 3.226em, -0.465em); top: -2.811em; left: 0em;"><span id="MathJax-Span-75" class="mrow"><span id="MathJax-Span-76" class="msubsup"><span style="display: inline-block; position: relative; width: 1.355em; height: 0px;"><span style="position: absolute; clip: rect(1.742em, 1000em, 2.756em, -0.465em); top: -2.59em; left: 0em;"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-77" class="mi">H<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.057em;"></span></span><span style="display: inline-block; width: 0px; height: 2.59em;"></span></span><span style="position: absolute; top: -2.725em; left: 0.949em;"><span style="font-size: 70.7%; font-family: MathJax_Main;" id="MathJax-Span-78" class="mn">2</span><span style="display: inline-block; width: 0px; height: 2.315em;"></span></span></span></span><span style="font-family: MathJax_Main;" id="MathJax-Span-79" class="mo">(</span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-80" class="mi">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span style="font-family: MathJax_Main;" id="MathJax-Span-81" class="mo">)</span></span><span style="display: inline-block; width: 0px; height: 2.811em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.34em; vertical-align: -0.33em;"></span></span></nobr></span><script id="MathJax-Element-9" type="math/tex">H^2(f)</script> and the phase response</li>
+<li>Comment on your bandpass and if it indeed passed the right frequencies.</li>
+</ol>
+<p>HINT: when you make the Dirichlet Kernel filter make sure that the <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-10-Frame" class="MathJax"><nobr><span style="width: 2.574em; display: inline-block;" id="MathJax-Span-82" class="math"><span style="display: inline-block; position: relative; width: 2.37em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.952em, 1000em, 2.998em, -0.448em); top: -2.811em; left: 0em;"><span id="MathJax-Span-83" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-84" class="mi">k</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-85" class="mo">=</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-86" class="mn">0</span></span><span style="display: inline-block; width: 0px; height: 2.811em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.892em; vertical-align: -0.083em;"></span></span></nobr></span><script id="MathJax-Element-10" type="math/tex">k=0</script> case is treated "correctly" because <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-11-Frame" class="MathJax"><nobr><span style="width: 4.896em; display: inline-block;" id="MathJax-Span-87" class="math"><span style="display: inline-block; position: relative; width: 4.519em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.896em, 1000em, 3.226em, -0.443em); top: -2.811em; left: 0em;"><span id="MathJax-Span-88" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-89" class="mi">s</span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-90" class="mi">i</span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-91" class="mi">n</span><span style="font-family: MathJax_Main;" id="MathJax-Span-92" class="mo">(</span><span style="font-family: MathJax_Main;" id="MathJax-Span-93" class="mn">0</span><span style="font-family: MathJax_Main;" id="MathJax-Span-94" class="mo">)</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-95" class="mo">=</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-96" class="mn">0</span></span><span style="display: inline-block; width: 0px; height: 2.811em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.199em; vertical-align: -0.33em;"></span></span></nobr></span><script id="MathJax-Element-11" type="math/tex">sin(0)=0</script> and you will get a discontinuity.  Calculate what <span class="MathJax_Preview"></span><span style="" aria-readonly="true" role="textbox" id="MathJax-Element-12-Frame" class="MathJax"><nobr><span style="width: 1.027em; display: inline-block;" id="MathJax-Span-97" class="math"><span style="display: inline-block; position: relative; width: 0.937em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(1.4em, 1000em, 2.591em, -0.448em); top: -2.26em; left: 0em;"><span id="MathJax-Span-98" class="mrow"><span id="MathJax-Span-99" class="msubsup"><span style="display: inline-block; position: relative; width: 0.957em; height: 0px;"><span style="position: absolute; clip: rect(1.731em, 1000em, 2.767em, -0.448em); top: -2.59em; left: 0em;"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-100" class="mi">h</span><span style="display: inline-block; width: 0px; height: 2.59em;"></span></span><span style="position: absolute; top: -2.165em; left: 0.551em;"><span style="font-size: 70.7%; font-family: MathJax_Main;" id="MathJax-Span-101" class="mn">0</span><span style="display: inline-block; width: 0px; height: 2.315em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.26em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.047em; vertical-align: -0.238em;"></span></span></nobr></span><script id="MathJax-Element-12" type="math/tex">h_0</script> should be from <a href="http://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule">L'Hôpital's_rule</a>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[0]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[0]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>COMMENT</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Q3:-Bandpass-the-weather-data">Q3: Bandpass the weather data<a class="anchor-link" href="#Q3:-Bandpass-the-weather-data">¶</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[29]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">minutedata</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s">'http://web.uvic.ca/~jklymak/Phy411/Data/MinuteData/DeepCoveNew.txt'</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">dc</span><span class="o">=</span><span class="n">minutedata</span><span class="p">[</span><span class="n">isfinite</span><span class="p">(</span><span class="n">minutedata</span><span class="p">)]</span>
+<span class="kn">import</span> <span class="nn">scipy.signal</span> <span class="kn">as</span> <span class="nn">signal</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p><div style="background:#F0F0F0">
+<strong>1</strong> Using <code>signal.filtfilt</code> and suitable  
+"elliptical", filters band pass the daily signal from the minute-data 
+from Deep Cove.  Plot the power spectrum of the unfiltered and filtered 
+signals. </div>
+<p></p>
+<p>
+</p><div style="background:#F0F0F0">
+HINT: Do a high pass and low pass.  Design using <code>ellipord</code> and <code>ellip</code>.
+  These functions allow you to try and design a bandpass directly, but I
+ could not get it to work.  Do not be too draconian in your passband - 
+i.e. make it relatively broad, but do try and suppress the peaks.  I 
+found it easier to think in terms of "hours" rather than frequencies, 
+but you can do it as frequencies as well.
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[0]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="background:#F0F0F0"> <strong>2</strong> Using your band passed signal, plot the <em>amplitude</em>
+ of the daily cycle as a function of time, smoothed over a suitable time
+ period. Compare with the raw timeseries to make sure your amplitudes 
+make sense. Comment on the annual variation in the daily amplitude and 
+if it makes sense with respect to the seasons.
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>COMMENT HERE</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+     <!-- <hr/> -->
+     <div class="row hidden-print">
+      <div class="span12 text-center">
+        <a href="#">Back to top</a>
+      </div>
+    </div>
+
+     <!-- Footer
+     ================================================== -->
+      
+      <footer class="footer hidden-print">
+      <div class="span12 row-fluid footer-row">
+          <div class="span4">
+            <p>This web site does not host notebooks, it only renders notebooks available on other websites.</p>
+          </div>
+
+          <div class="span4">
+            <p>Thanks to <a href="http://www.rackspace.com/">Rackspace</a> for hosting.</p>
+            <p>nbviewer GitHub <a href="https://github.com/ipython/nbviewer">repository</a>.</p>
+            <p>nbviewer <a href="https://github.com/ipython/nbviewer/blob/master/LICENSE.txt" target="_blank">license</a>.</p>
+          </div>
+
+          <div class="span4">
+            
+
+              
+                <p>
+                    nbviewer version:
+                    <a href="https://github.com/ipython/nbviewer/commit/2da9e6ad2efd8df75b54efb931060862222b3fe4">2da9e6a</a>
+                </p>
+              
+            
+
+<p class="text-muted">
+    IPython version: 2.3.0
+    
+</p>
+
+
+            
+
+            
+
+<p class="text-muted">
+Rendered <span class="date" data-date="Wed, 29 Oct 2014 05:14:26 UTC" title="Wed, 29 Oct 2014 05:14:26 UTC">a few seconds ago</span>
+</p>
+
+
+          </div>
+      </div>
+      </footer>
+      
+
+    </div><!-- /container -->
+
+    <script src="Assignment-07-MDewey.ipynb_files/bootstrap-collapse.js"></script>
+    <script src="Assignment-07-MDewey.ipynb_files/headroom.js"></script>
+    <script src="Assignment-07-MDewey.ipynb_files/jQuery.js"></script>
+
+
+    
+    
+    
+    <script>
+    $(document).ready(
+                function(){
+                    $("#menubar").headroom({
+                        "tolerance": 5,
+                        "offset": 205,
+                        "classes": {
+                            "initial": "animated",
+                            "pinned": "slideInDown",
+                            "unpinned": "slideOutUp"
+                        }
+                    })
+                }
+            );
+    </script>
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-38683231-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <script>
+        var update_date  = function(){
+            var str = window.moment($('.date').data('date')).fromNow();
+            $('.date').text(str);
+        }
+        setInterval(update_date , 61*1000);
+        $(update_date);
+    </script>
+    <!--NEW RELIC Stop Perf Measurement-->
+    
+    <!--NEW RELIC End-->
+  
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px none; margin: 0px;"><div style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px none; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: MathJax_Main,sans-serif;" id="MathJax_Font_Test"></div></div></body></html>
